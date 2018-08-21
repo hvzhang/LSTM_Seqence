@@ -2,7 +2,7 @@
 """
 Created on Tue Aug 21 13:43:37 2018
 
-@author: zhanghui183140
+@author: hvzhang@gmail.com
 """
 
 # LSTM for international airline passengers problem with time step regression framing
