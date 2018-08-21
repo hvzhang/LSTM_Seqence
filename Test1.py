@@ -76,7 +76,7 @@ testPredictPlot[len(trainPredict)+(look_back*2)+1:len(dataset)-1, :] = testPredi
 fig_verify = plt.figure(figsize=(70, 8))
 
 plt.plot(scaler.inverse_transform(dataset), color='blue')
-#plt.plot(trainPredictPlot)
+plt.plot(trainPredictPlot, color = 'green')
 
 plt.plot(testPredictPlot, color = 'red')
 plt.show()
