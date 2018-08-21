@@ -2,7 +2,7 @@
 """
 Created on Tue Aug 21 09:14:07 2018
 
-@author: zhanghui183140
+@author: hvzhang@gmail.com
 """
 
 import sqlite3
