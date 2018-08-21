@@ -17,12 +17,12 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
 # convert an array of values into a dataset matrix
 def create_dataset(dataset, look_back=1):
-	dataX, dataY = [], []
-	for i in range(len(dataset)-look_back-1):
-		a = dataset[i:(i+look_back), 0]
-		dataX.append(a)
-		dataY.append(dataset[i + look_back, 0])
-	return numpy.array(dataX), numpy.array(dataY)
+    dataX, dataY = [], []
+    for i in range(len(dataset)-look_back-1):
+        a = dataset[i:(i+look_back), 0]
+        dataX.append(a)
+        dataY.append(dataset[i + look_back, 0])
+    return numpy.array(dataX), numpy.array(dataY)
 # fix random seed for reproducibility
 numpy.random.seed(7)
 # load the dataset
@@ -73,11 +73,15 @@ testPredictPlot[:, :] = numpy.nan
 testPredictPlot[len(trainPredict)+(look_back*2)+1:len(dataset)-1, :] = testPredict
 
 # plot baseline and predictions
-fig_verify = plt.figure(figsize=(70, 8))
+fig_verify = plt.figure(figsize=(50, 6))
 
 plt.plot(scaler.inverse_transform(dataset), color='blue')
 plt.plot(trainPredictPlot, color = 'green')
 
 plt.plot(testPredictPlot, color = 'red')
+
+
+plt.legend(['Actual Data', 'Model predicted', 'Test data'], loc='upper left')
+
 plt.show()
 fig_verify.savefig("D:\\workspace\\py\\yanfang\\hd\\Output\\LSTM_Seq.png")
